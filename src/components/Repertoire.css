@@ -1,0 +1,61 @@
+.repertoire {
+  padding: 4rem 0;
+  background-color: #ffffff;
+}
+
+.repertoire h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.repertoire-list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.repertoire-item {
+  padding: 1.5rem;
+  background: #f8f8f8;
+  border-radius: 10px;
+  border-top: 3px solid #8B4513;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.repertoire-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.repertoire-item h3 {
+  font-size: 1.3rem;
+  margin: 0 0 0.5rem 0;
+  color: #333;
+}
+
+.repertoire-item p {
+  font-size: 1rem;
+  color: #666;
+  margin: 0;
+}
+
+.no-repertoire {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+  padding: 2rem;
+}
+
+@media (max-width: 768px) {
+  .repertoire h2 {
+    font-size: 2rem;
+  }
+
+  .repertoire-list {
+    grid-template-columns: 1fr;
+  }
+}
