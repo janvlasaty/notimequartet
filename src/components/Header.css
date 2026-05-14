@@ -1,7 +1,8 @@
 .header {
   position: relative;
   width: 100%;
-  height: 500px;
+  height: 90vh;
+  min-height: 600px;
   overflow: hidden;
 }
 
@@ -16,6 +17,7 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
+  filter: brightness(0.6);
 }
 
 .header-overlay {
@@ -24,38 +26,55 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.5)
+  );
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: white;
   text-align: center;
+  padding: var(--space-md);
 }
 
 .header-overlay h1 {
-  font-size: 3.5rem;
+  font-size: clamp(3rem, 12vw, 8rem);
   margin: 0;
-  font-weight: 700;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.9);
+  color: white;
+  font-family: var(--font-heading);
+  max-width: 90%;
 }
 
 .header-overlay p {
-  font-size: 1.5rem;
-  margin-top: 1rem;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  font-size: clamp(1.25rem, 3vw, 2.5rem);
+  margin-top: var(--space-md);
+  font-weight: 600;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-family: var(--font-body);
 }
 
 @media (max-width: 768px) {
   .header {
-    height: 300px;
+    height: 70vh;
+    min-height: 500px;
   }
 
   .header-overlay h1 {
-    font-size: 2rem;
+    font-size: clamp(2.5rem, 10vw, 4rem);
   }
 
   .header-overlay p {
-    font-size: 1rem;
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    margin-top: var(--space-sm);
   }
 }

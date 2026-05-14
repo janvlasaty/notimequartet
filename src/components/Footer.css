@@ -1,11 +1,14 @@
 .footer {
-  background: #333;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
   color: white;
-  padding: 2rem 0;
+  padding: var(--space-lg) 0;
   text-align: center;
+  border-top: 3px solid var(--color-primary);
 }
 
 .footer p {
   margin: 0;
-  font-size: 0.9rem;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.03em;
 }

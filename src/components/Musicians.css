@@ -1,41 +1,54 @@
 .musicians {
-  padding: 4rem 0;
-  background-color: #f8f8f8;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
+  padding: var(--space-2xl) 0;
+  background: linear-gradient(135deg, #fafafa 0%, #f0f0f0 100%);
 }
 
 .musicians h2 {
   text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-  color: #333;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: var(--space-xl);
+  color: var(--color-text-dark);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  position: relative;
+  padding-bottom: var(--space-md);
+}
+
+.musicians h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 5px;
+  background: var(--color-primary);
 }
 
 .musicians-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-lg);
   justify-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
 }
 
 .musician-card {
   background: white;
-  border-radius: 10px;
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-md);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  max-width: 300px;
+  max-width: 350px;
   width: 100%;
 }
 
 .musician-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-xl);
 }
 
 .musician-card img {
@@ -45,25 +58,32 @@
 }
 
 .musician-card h3 {
-  font-size: 1.5rem;
-  margin: 1rem;
-  color: #333;
+  font-size: var(--text-xl);
+  margin: var(--space-md);
+  color: var(--color-text-dark);
+  font-weight: 900;
+  font-family: var(--font-heading);
 }
 
 .musician-card p {
-  font-size: 1rem;
-  margin: 0 1rem 1.5rem;
-  color: #666;
+  font-size: var(--text-base);
+  margin: 0 var(--space-md) var(--space-md);
+  color: var(--color-text-light);
   font-style: italic;
+  font-weight: 600;
 }
 
 @media (max-width: 768px) {
+  .musicians {
+    padding: var(--space-xl) 0;
+  }
+
   .musicians h2 {
-    font-size: 2rem;
+    font-size: clamp(2rem, 8vw, 3rem);
   }
 
   .musicians-grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--space-md);
   }
 }
