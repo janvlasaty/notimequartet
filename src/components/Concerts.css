@@ -1,42 +1,61 @@
 .concerts {
-  padding: 4rem 0;
-  background-color: #ffffff;
+  padding: var(--space-2xl) 0;
+  background: linear-gradient(135deg, #ffffff 0%, #f9f9f9 100%);
 }
 
 .concerts h2 {
   text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-  color: #333;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: var(--space-xl);
+  color: var(--color-text-dark);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  position: relative;
+  padding-bottom: var(--space-md);
+}
+
+.concerts h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 5px;
+  background: var(--color-primary);
 }
 
 .concerts-list {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
+  padding: 0 var(--space-md);
 }
 
 .concert-card {
   display: flex;
-  gap: 2rem;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  background: #f8f8f8;
-  border-radius: 10px;
-  border-left: 4px solid #8B4513;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  margin-bottom: var(--space-md);
+  background: white;
+  border-radius: 16px;
+  border-left: 6px solid var(--color-primary);
+  box-shadow: var(--shadow-md);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .concert-card:hover {
-  transform: translateX(5px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateX(10px);
+  box-shadow: var(--shadow-lg);
 }
 
 .concert-date {
   flex-shrink: 0;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #8B4513;
-  min-width: 120px;
+  font-size: var(--text-lg);
+  font-weight: 900;
+  color: var(--color-primary);
+  min-width: 140px;
+  font-family: var(--font-heading);
 }
 
 .concert-details {
@@ -44,39 +63,47 @@
 }
 
 .concert-details h3 {
-  font-size: 1.3rem;
-  margin: 0 0 0.5rem 0;
-  color: #333;
+  font-size: var(--text-xl);
+  margin: 0 0 var(--space-xs) 0;
+  color: var(--color-text-dark);
+  font-weight: 900;
+  font-family: var(--font-heading);
 }
 
 .concert-city {
-  font-size: 1rem;
-  color: #666;
+  font-size: var(--text-base);
+  color: var(--color-text-light);
   margin: 0;
+  font-weight: 600;
 }
 
 .concert-program {
-  font-size: 0.9rem;
-  color: #888;
-  margin-top: 0.5rem;
+  font-size: var(--text-sm);
+  color: var(--color-text-light);
+  margin-top: var(--space-xs);
   font-style: italic;
 }
 
 .no-concerts {
   text-align: center;
-  font-size: 1.2rem;
-  color: #666;
-  padding: 2rem;
+  font-size: var(--text-lg);
+  color: var(--color-text-light);
+  padding: var(--space-xl);
+  font-weight: 600;
 }
 
 @media (max-width: 768px) {
+  .concerts {
+    padding: var(--space-xl) 0;
+  }
+
   .concerts h2 {
-    font-size: 2rem;
+    font-size: clamp(2rem, 8vw, 3rem);
   }
 
   .concert-card {
     flex-direction: column;
-    gap: 1rem;
+    gap: var(--space-sm);
   }
 
   .concert-date {
